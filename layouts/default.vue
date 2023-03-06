@@ -55,11 +55,11 @@ export default {
 .defaultLayoutPC {
   color: #000;
   min-height: 100vh;
-  background: #202a3c;
+  background: #131322;
 }
 .defaultLayout {
   color: #000;
   min-height: 100vh;
-  background: #202a3c;
+  background: #131322;
 }
 </style>

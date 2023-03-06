@@ -1,42 +1,8 @@
 <template>
   <div>
-    <div class="indexPC " v-show="!isMobile">
+    <div class="indexPC PC" v-show="!isMobile">about</div>
 
-      <img src="@/assets/img/index/top.png" alt="top" class="indexPC-top">
-      <div class="indexPC-layout">
-        <img src="@/assets/img/index/block1.png" alt="block1" class="indexPC-blcok1" />
-      </div>
-
-      <img src="@/assets/img/index/block2.png" alt="blcok2" class="indexPC-blcok2" />
-
-      <div class="indexPC-layout">
-        <div class="indexPC-blcok3">
-          <div class="blcok3-title">创新探索</div>
-          <div class="block3-chatRight flex flex-row-reverse">
-            <img src="../assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
-            <div class="chatRight-chat">生成式AI如何全驱动一站式创作、NFT化和社交平台？</div>
-          </div>
-
-          <div class="block3-chatLeft flext">
-            <img src="../assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
-            <div class="chatLeft-chat">一键创作AI作品，AI-NFT化，确权和赋予经济价值，IP品牌化；全新AI社交模式，承载海量AI-NFT的3D场景，AI化的3D数字人在线互动</div>
-          </div>
-
-          <div class="block3-chatRight flex flex-row-reverse">
-            <img src="../assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
-            <div class="chatRight-chat chatRight-chat2">如何将Web2海量用户带入Web3世界？</div>
-          </div>
-
-          <div class="block3-chatLeft flext">
-            <img src="../assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
-            <div class="chatLeft-chat chatLeft-chat2" >Web2.5,渐进式发展，短中期偏中心化，以Web2的良好用户体验为主，后续平滑过度到Web3；Web3账户体系向账户抽象看齐，降低用户使用门槛，保证用户资金安全</div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="index" v-show="isMobile">777777777</div>
+    <div class="index" v-show="isMobile">about</div>
   </div>
 </template>
 
@@ -44,7 +10,7 @@
 import { mapState } from "vuex"
 export default {
   layout: "default",
-  name: "index",
+  name: "about",
   computed: mapState({
     isMobile: state => state.app.isMobile
   }),
@@ -156,96 +122,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.indexPC {
-
-  .indexPC-top {
-    width: 830px;
-    min-height: 878px;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .indexPC-layout {
-    width: 1200px;
-    margin: 0 auto;
-  }
-  .indexPC-blcok1 {
-    width: 780px;
-    min-height: 164px;
-    padding-top: 302px;
-    padding-bottom: 508px;
-    position: relative;
-  }
-  .indexPC-blcok2 {
-    width: 1353px;
-    min-height: 805px;
-    margin: 0 auto;
-    display: block;
-  }
-  .indexPC-blcok3 {
-    margin-top: 200px;
-    
-    position: relative;
-    z-index: 8;
-    .blcok3-title {
-      font-size: 40px;
-      font-weight: 600;
-      color: #EFEFFC;
-      text-align: center;
-      margin-bottom: 63px;
-    }
-    .block3-chatRight {
-      margin-bottom: 63px;
-      gap: 14px;
-      .chatRight-chat {
-        width: 546px;
-        height: 84px;
-        background-image: url('~@/assets/img/index/chatRight.png');
-        background-size: 100% 100%;
-        font-size: 18px;
-        font-weight: 600;
-        color: #EFEFFC;
-        padding: 29px 46px;
-        text-align: center;
-      }
-      .chatRight-chat2 {
-        background-image: url('~@/assets/img/index/chatRight2.png');
-        width: 421px;
-      }
-      .chatRight-avatar {
-        width: 52px;
-        min-height: 64px;
-      }
-    }
-
-    .block3-chatLeft {
-      margin-bottom: 63px;
-      gap: 14px;
-      .chatLeft-chat {
-        width: 703px;
-        height: 137px;
-        line-height: 40px;
-        background-image: url('~@/assets/img/index/chatLeft.png');
-        background-size: 100% 100%;
-        font-size: 18px;
-        font-weight: 600;
-        color: #EFEFFC;
-        padding: 28px 45px;
-      }
-
-      .chatLeft-chat2 {
-        background-image: url('~@/assets/img/index/chatLeft2.png');
-        width: 703px;
-        height: 175px;
-      }
-      .chatLeft-avatar {
-        width: 75px;
-        min-height: 64px;
-        margin-top: 20px;
-      }
-    }
-  }
-
-}
 /* prettier-ignore */
 </style>

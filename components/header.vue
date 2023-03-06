@@ -1,7 +1,13 @@
 <template>
   <div>
-    <div class="headerPC PC flex" v-show="!isMobile">
+    <div class="headerPC flex flex-jus-between" v-show="!isMobile">
+      <nuxt-link to="/">
+        <img src="@/assets/img/logo.png" alt="logo" class="headerPC-logo" />
+      </nuxt-link>
 
+      <div class="headerPC-gap flex">
+        <nuxt-link v-for="(item, index) in navList" :key="index" :to="item.router" class="headerPC-span" :class="{'headerPC-spanActive': item.routeName == $route.name}">{{ item.name }}</nuxt-link>
+      </div>
     </div>
     <div v-show="isMobile">
 
@@ -15,13 +21,13 @@ export default {
   name: "headerPC",
   data() {
     return {
-      navList: ["index", "chain", "ai", "dna", "meta", "about"],
       headerOverLay: false,
       scrolNumber: 0,
     }
   },
   computed: mapState({
     isMobile: (state) => state.app.isMobile,
+    navList: (state) => state.app.navList,
   }),
   watch: {
     headerOverLay: {
@@ -36,6 +42,7 @@ export default {
   mounted() {
     this.scrolNumber = document?.documentElement?.scrollTop || document?.body?.scrollTop || window.pageYOffset || 0
     window.addEventListener("scroll", this.scrollToTop)
+    console.log(this.$route);
   },
   methods: {
     scrollToTop() {
@@ -47,42 +54,24 @@ export default {
 
 <style lang="scss" scoped>
 .headerPC {
-  width: 100%;
-  height: 88px;
+  width: 1200px;
+  height: 84px;
+  margin: 0 auto;
   position: relative;
-  z-index: 3;
-  .headerPC-layout {
-    width: 1140px;
-    margin: 0 auto;
-    .headerPC-logoLayout {
-      width: 88px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-    .headerPC-logo {
-      width: 71px;
-      height: 28px;
-      cursor: pointer;
-    }
-    .headerPC-navList {
-      gap: 70px;
-      font-size: 16px;
-      font-weight: 400;
-      // color: #bdcaed;
-      color: #bdd6ed;
-      a {
-        color: #bdd6ed;
-      }
-      a:hover {
-        color: #ffffff;
-      }
-      .navActive {
-        color: #ffffff;
-      }
-    }
+  z-index: 5;
+  .headerPC-logo {
+    width: 70px;
+  }
+  .headerPC-gap {
+    gap: 74px;
+  }
+  .headerPC-span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #787896;
+  }
+  .headerPC-spanActive {
+    color: #EFEFFC;
   }
 }
 
