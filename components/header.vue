@@ -18,7 +18,7 @@
 <script>
 import { mapState } from "vuex"
 export default {
-  name: "headerPC",
+  name: "header",
   data() {
     return {
       headerOverLay: false,

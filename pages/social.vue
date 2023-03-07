@@ -10,7 +10,7 @@
 import { mapState } from "vuex"
 export default {
   layout: "default",
-  name: "ai",
+  name: "social",
   computed: mapState({
     isMobile: state => state.app.isMobile
   }),

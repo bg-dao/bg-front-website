@@ -185,6 +185,11 @@ body:before {
   background: #131322;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 1200px) {
   .PC {
     display: none;

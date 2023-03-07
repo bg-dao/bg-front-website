@@ -10,7 +10,7 @@
 import { mapState } from "vuex"
 export default {
   layout: "default",
-  name: "ai",
+  name: "nft",
   computed: mapState({
     isMobile: state => state.app.isMobile
   }),
@@ -76,7 +76,7 @@ export default {
 
 <style lang="scss" scoped>
 .aiPC {
-  
+
 }
 /* prettier-ignore */
 </style>

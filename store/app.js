@@ -2,20 +2,20 @@ export const state = () => ({
   isMobile: false,
   navList: [{
     name: 'Home',
-    router: '',
+    router: '/',
     routeName: 'index'
   },{
     name: 'BG-AI',
-    router: '',
-    routeName: 'index2'
+    router: '/ai',
+    routeName: 'ai'
   },{
     name: 'BG-NFT',
-    router: '',
-    routeName: 'index3'
+    router: '/nft',
+    routeName: 'nft'
   },{
     name: 'BG-Social',
-    router: '',
-    routeName: 'index4'
+    router: '/social',
+    routeName: 'social'
   }]
 })
 

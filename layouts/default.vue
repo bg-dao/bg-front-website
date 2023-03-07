@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="defaultLayoutPC">
+    <div class="defaultLayoutPC" :class="{'defaultLayoutPCHome': $route.name == 'index'}">
       <!-- <div class="defaultLayoutPC" v-if="!isMobile"> -->
       <Header></Header>
       <Nuxt />
@@ -52,14 +52,17 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  background-color: #131322;
+}
 .defaultLayoutPC {
   color: #000;
   min-height: 100vh;
-  background: #131322;
+  background-color: #131322;
+  background-image: url('~@/assets/img/bg.png');
+  background-size: 100% auto;
 }
-.defaultLayout {
-  color: #000;
-  min-height: 100vh;
-  background: #131322;
+.defaultLayoutPCHome {
+  background-image: none;
 }
 </style>
