@@ -112,10 +112,10 @@ export default {
   mounted() {
     this.tab = 1
     // new window.WOW().init()
-    
+
   },
   methods: {
-    
+
   },
   head() {
     return {
