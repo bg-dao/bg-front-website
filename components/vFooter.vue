@@ -20,8 +20,6 @@
       </div>
     </div>
     <div class="vFooter" v-show="isMobile">
-
-      <!-- <img src="@/assets/img/vFooter/m_bg.png" alt="footerbg" class="vFooter-img" /> -->
       <div class="vFooter-layout">
         <div class="header flex flex-jus-between">
           <nuxt-link to="/"><img src="@/assets/img/logo.png" alt="logo" class="header-logo" /></nuxt-link>
