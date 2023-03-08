@@ -13,22 +13,22 @@
         <div class="indexPC-blcok3">
           <div class="blcok3-title">创新探索</div>
           <div class="block3-chatRight flex flex-row-reverse">
-            <img src="../assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
+            <img src="@/assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
             <div class="chatRight-chat">生成式AI如何全驱动一站式创作、NFT化和社交平台？</div>
           </div>
 
           <div class="block3-chatLeft flext">
-            <img src="../assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
+            <img src="@/assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
             <div class="chatLeft-chat">一键创作AI作品，AI-NFT化，确权和赋予经济价值，IP品牌化；全新AI社交模式，承载海量AI-NFT的3D场景，AI化的3D数字人在线互动</div>
           </div>
 
           <div class="block3-chatRight flex flex-row-reverse">
-            <img src="../assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
+            <img src="@/assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
             <div class="chatRight-chat chatRight-chat2">如何将Web2海量用户带入Web3世界？</div>
           </div>
 
           <div class="block3-chatLeft flext">
-            <img src="../assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
+            <img src="@/assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
             <div class="chatLeft-chat chatLeft-chat2" >Web2.5,渐进式发展，短中期偏中心化，以Web2的良好用户体验为主，后续平滑过度到Web3；Web3账户体系向账户抽象看齐，降低用户使用门槛，保证用户资金安全</div>
           </div>
 
@@ -36,7 +36,49 @@
       </div>
     </div>
 
-    <div class="index" v-show="isMobile">777777777</div>
+    <div class="index" v-show="isMobile">
+      <div class="index-b1">
+        <img src="@/assets/img/index/m_b1.png" alt="homeImg" class="b1-img">
+      </div>
+
+      <div class="index-b2">
+        <div class="b2-title">AI-NFT贯穿整个产品线</div>
+        <img src="@/assets/img/index/b2_arrow.png" alt="arrow" class="b2-arrow" @click="mySwiper && mySwiper.slideNext()">
+        <div class="b2-swiper">
+          <div class="swiper" v-swiper:mySwiper="swiperOption">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" :key="index" v-for="(banner, index) in banners" :style="{ backgroundImage: 'url(' + banner + ')' }"></div>
+            </div>
+
+          </div>
+        </div>
+        <img src="@/assets/img/index/b2_arrow.png" alt="arrow" class="b2-arrow" @click="mySwiper && mySwiper.slidePrev()">
+      </div>
+
+      <div class="index-b3">
+        <div class="b3-title">「生成式AI全驱动」</div>
+        <div class="b3-title2">创新探索</div>
+        <div class="b3-layout">
+          <div class="b3-block flext flex-row-reverse">
+            <img src="@/assets/img/index/b3-leftIcon.png" alt="peopleAvatar" class="b3-leftIcon" />
+            <div class="b3-box b3-box1">生成式AI如何全驱动一站式创作、NFT化和社交平台？</div>
+          </div>
+          <div class="b3-block flext">
+            <img src="@/assets/img/index/b3-rightIcon.png" alt="peopleAvatar" class="b3-rightIcon" />
+            <div class="b3-box b3-box2">一键创作AI作品，AI-NFT化，确权和赋予经济价值，IP品牌化；全新AI社交模式，承载海量AI-NFT的3D场景，AI化的3D数字人在线互动</div>
+          </div>
+          <div class="b3-block flext flex-row-reverse">
+            <img src="@/assets/img/index/b3-leftIcon.png" alt="peopleAvatar" class="b3-leftIcon" />
+            <div class="b3-box b3-box3">如何将Web2海量用户带入Web3世界？</div>
+          </div>
+          <div class="b3-block flext">
+            <img src="@/assets/img/index/b3-rightIcon.png" alt="peopleAvatar" class="b3-rightIcon" />
+            <div class="b3-box b3-box2">Web2.5,渐进式发展，短中期偏中心化，以Web2的良好用户体验为主，后续平滑过度到Web3；Web3账户体系向账户抽象看齐，降低用户使用门槛，保证用户资金安全</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -51,52 +93,19 @@ export default {
   data() {
     return {
       tab: 1,
-      // banners: [require(`~/assets/img/index/banner1.png`), require(`~/assets/img/index/banner2.png`), require(`~/assets/img/index/banner3.png`), require(`~/assets/img/index/banner4.png`)],
+      banners: [require(`~/assets/img/index/b2_banner1.png`), require(`~/assets/img/index/b2_banner2.png`), require(`~/assets/img/index/b2_banner3.png`)],
 
       swiperOption: {
+        direction: "vertical",
         // watchSlidesProgress: true,
         // slidesPerView: "auto",
         // centeredSlides: true,
         loop: true,
         // autoplay: true,
         autoplay: {
-          delay: 2000 //1秒切换一次
+          delay: 3500 //3秒切换一次
         },
-        // loopedSlides: 1,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-        // on: {
-        //   // progress: function (progress) {
-        //   //   for (let i = 0; i < this.slides.length; i++) {
-        //   //     var slide = this.slides.eq(i)
-        //   //     var slideProgress = this.slides[i].progress
-        //   //     let modify = 1
-        //   //     if (Math.abs(slideProgress) > 1) {
-        //   //       modify = (Math.abs(slideProgress) - 1) * 0.3 + 1
-        //   //     }
-        //   //     let translate = slideProgress * modify * 160 + "px"
-        //   //     let scale = 1 - Math.abs(slideProgress) / 5
-        //   //     let zIndex = 999 - Math.abs(Math.round(10 * slideProgress))
-        //   //     slide.transform("translateX(" + translate + ") scale(" + scale + ")")
-        //   //     slide.css("zIndex", zIndex)
-        //   //     slide.css("opacity", 1)
-        //   //     if (Math.abs(slideProgress) > 3) {
-        //   //       slide.css("opacity", 0)
-        //   //     }
-        //   //   }
-        //   // },
-        //   // setTransition: function (transition) {
-        //   //   for (var i = 0; i < this.slides.length; i++) {
-        //   //     var slide = this.slides.eq(i)
-        //   //     slide.transition(transition)
-        //   //   }
-        //   // },
-        // },
       },
-
-      // mBanners: [require(`~/assets/img/index/m_banner1.png`), require(`~/assets/img/index/m_banner2.png`), require(`~/assets/img/index/m_banner3.png`), require(`~/assets/img/index/m_banner4.png`)],
 
       androidUrl: "https://bytego123.com/download/ss/starsky1.0.2.apk"
     }
@@ -114,25 +123,7 @@ export default {
     openAndroidUrl() {
       window.open(this.androidUrl)
     },
-    fetchUrl() {
-      let baseUrl = process.env.BASE_API ? process.env.BASE_API : "http://test-meta.web3ssc.com:32582"
-      if (location.href.includes("test")) baseUrl = "http://test-meta.web3ssc.com:32582"
-      else baseUrl = "https://meta.web3ssc.com"
-      console.log("baseUrl is ", baseUrl)
 
-      this.$axios({
-        method: "get", //指定请求方式
-        url: baseUrl + "/api/common/normal/queryPcCommonInfo"
-      }).then(res => {
-        // console.log("res is ", res)
-        if (res.data?.code === 0) {
-          let appUpdateInfoList = res.data.data.appUpdateInfoList
-          appUpdateInfoList.forEach(item => {
-            if (item.osType == 2) this.androidUrl = item.updateUrl
-          })
-        }
-      })
-    },
     gototab(tab) {
       this.tab = tab
     },
@@ -157,7 +148,6 @@ export default {
 
 <style lang="scss" scoped>
 .indexPC {
-
   .indexPC-top {
     width: 830px;
     min-height: 878px;
@@ -184,7 +174,7 @@ export default {
   }
   .indexPC-blcok3 {
     margin-top: 200px;
-    
+
     position: relative;
     z-index: 8;
     .blcok3-title {
@@ -248,4 +238,146 @@ export default {
 
 }
 /* prettier-ignore */
+.index {
+  .index-b1 {
+    margin: 0 auto;
+    width: 439PX;
+    min-height: 438PX;
+    background-image: url('~@/assets/img/index/m_b1bg.png');
+    background-size: 100% 100%;
+    position: relative;
+    .b1-img {
+      position: absolute;
+      top: 168PX;
+      left: -30PX;
+      width: 501PX;
+      min-height: 106PX;
+    }
+  }
+
+  .index-b2 {
+    margin-top: 30PX;
+    .b2-title {
+      font-size: 40PX;
+      font-weight: 600;
+      color: #EFEFFC;
+      width: 100%;
+      text-align: center;
+    }
+    .b2-arrow {
+      margin: 0 auto;
+      width: 51PX;
+      min-height: 32PX;
+      margin-top: 15PX;
+      display: block;
+    }
+    .b2-swiper {
+      margin: 0 auto;
+      width: 704PX;
+      height: 386PX;
+      margin-top: 23PX;
+      margin-bottom: 23PX;
+
+      .swiper {
+        width: 704PX;
+        height: 386PX;
+        position: relative;
+        .swiper-wrapper {
+          width: 100%;
+          height: 386PX;
+          position: relative;
+        }
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 704PX;
+          height: 386PX;
+          background-size: 100% 100%;
+          // position: relative;
+          // z-index: 2;
+          img {
+            display: block;
+            width: 704PX;
+            height: 386PX;
+            // object-fit: cover;
+          }
+        }
+      }
+
+    }
+  }
+
+  .index-b3 {
+    margin-top: 8PX;
+    position: relative;
+    z-index: 6;
+    .b3-title {
+      font-size: 48PX;
+      font-weight: 600;
+      color: #6967FF;
+      width: 100%;
+      text-align: center;
+    }
+    .b3-title2 {
+      margin-top: 120PX;
+      margin-bottom: 63PX;
+      font-size: 40PX;
+      font-weight: 600;
+      color: #EFEFFC;
+      width: 100%;
+      text-align: center;
+    }
+    .b3-layout {
+      padding: 0 24PX;
+    }
+    .b3-block {
+      margin-bottom: 47PX;
+    }
+    .b3-leftIcon {
+      width: 39PX;
+      min-height: 48PX;
+      margin-left: 14PX;
+      margin-top: 16PX;
+    }
+    .b3-rightIcon {
+      width: 56PX;
+      min-height: 48PX;
+      margin-top: 20PX;
+      margin-right: 20PX;
+    }
+    .b3-box {
+      background-size: 100% 100%;
+      font-size: 24PX;
+      font-weight: 600;
+      color: #EFEFFC;
+      padding: 24PX;
+    }
+    .b3-box1 {
+      width: 546PX;
+      height: 122PX;
+      background-image: url('~@/assets/img/index/b3-box1.png');
+
+    }
+    .b3-box2 {
+      width: 551PX;
+      height: 208PX;
+      background-image: url('~@/assets/img/index/b3-box2.png');
+      padding-left: 45PX;
+      line-height: 40PX;
+    }
+    .b3-box3 {
+      width: 511PX;
+      height: 86PX;
+      background-image: url('~@/assets/img/index/b3-box3.png');
+    }
+    .b3-box4 {
+      width: 545PX;
+      height: 248PX;
+      background-image: url('~@/assets/img/index/b3-box4.png');
+      padding-left: 45PX;
+      line-height: 40PX;
+    }
+  }
+}
 </style>

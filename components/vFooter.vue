@@ -19,7 +19,27 @@
         </div>
       </div>
     </div>
-    <div class="vFooter" v-show="isMobile"></div>
+    <div class="vFooter" v-show="isMobile">
+
+      <!-- <img src="@/assets/img/vFooter/m_bg.png" alt="footerbg" class="vFooter-img" /> -->
+      <div class="vFooter-layout">
+        <div class="header flex flex-jus-between">
+          <nuxt-link to="/"><img src="@/assets/img/logo.png" alt="logo" class="header-logo" /></nuxt-link>
+
+          <div class="header-gap flex">
+            <nuxt-link v-for="(item, index) in navList" :key="index" :to="item.router" class="header-span" :class="{ 'header-spanActive': item.routeName == $route.name }">{{ item.name }}</nuxt-link>
+          </div>
+        </div>
+
+        <div class="vFooter-line"></div>
+
+        <div class="flex flex-jus-between">
+          <div>@2023 BG All rights reserved</div>
+          <nuxt-link to="/" style="color: #787896;">CONTACT US</nuxt-link>
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -99,11 +119,59 @@ export default {
 
   .vFooterPC-img {
     width: 100%;
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
   }
 }
 /* prettier-ignore */
 /* prettier-ignore */
+.vFooter {
+  margin-top: -270PX;
+  position: relative;
+  width: 100%;
+  height: 500PX;
+  background-image: url('~@/assets/img/vFooter/m_bg.png');
+  .vFooter-layout {
+    width: 100%;
+    padding: 24PX;
+    position: absolute;
+    bottom: 48PX;
+    left: 0;
+    z-index: 5;
+    font-size: 20PX;
+    font-weight: 400;
+    color: #787896;
+    .header {
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+      .header-logo {
+        width: 61PX;
+        min-height: 32PX;
+      }
+      .header-gap {
+        gap: 64PX;
+      }
+      .header-span {
+        font-size: 20PX;
+        font-weight: 600;
+        color: #787896;
+      }
+      .header-spanActive {
+        color: #efeffc;
+      }
+    }
+
+    .vFooter-line {
+      width: 100%;
+      height: 1px;
+      background: #787896;
+      margin-top: 40PX;
+      margin-bottom: 28PX;
+    }
+  }
+
+  .vFooter-img {
+    width: 100%;
+  }
+}
 </style>

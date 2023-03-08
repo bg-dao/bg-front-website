@@ -4,6 +4,7 @@
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
   font-family: "Noto Sans", "Noto Sans SC", sans-serif;
+  background-size: 100% 100%;
 }
 
 html,

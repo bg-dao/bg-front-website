@@ -10,6 +10,37 @@
       </div>
     </div>
     <div v-show="isMobile">
+      <div class="header flex flex-jus-between">
+        <nuxt-link to="/">
+          <img src="@/assets/img/logoPhone.png" alt="logo" class="header-logo" />
+        </nuxt-link>
+
+        <img src="@/assets/img/header/more.png" alt="more" class="header-more" @click="headerOverLay = true"/>
+      </div>
+
+      <div class="headerOverLay" v-show="headerOverLay">
+        <div class="headerNav flex flex-jus-between">
+          <nuxt-link to="/">
+            <img src="@/assets/img/logoPhone.png" alt="logo" class="header-logo" />
+          </nuxt-link>
+
+          <img src="@/assets/img/header/more.png" alt="more" class="header-cancel" @click="headerOverLay = false"/>
+        </div>
+
+        <div class="headerOverLay-list">
+
+          <div @click="headerOverLay = false">
+            <nuxt-link v-for="(item, index) in navList" :key="index" :to="item.router" >
+              <div class="headerOverLay-list__item flex flex-jus-between">
+                <div>{{ item.name }}</div>
+                <img src="@/assets/img/header/enter.png" alt="enter"  />
+              </div>
+            </nuxt-link>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
   </div>
@@ -29,16 +60,16 @@ export default {
     isMobile: (state) => state.app.isMobile,
     navList: (state) => state.app.navList,
   }),
-  watch: {
-    headerOverLay: {
-      handler: function () {
-        if (!document) return
-        if (this.headerOverLay == true) document.documentElement.style.overflow = "hidden"
-        else document.documentElement.style.overflow = "auto"
-      },
-      immediate: false,
-    },
-  },
+  // watch: {
+  //   headerOverLay: {
+  //     handler: function () {
+  //       if (!document) return
+  //       if (this.headerOverLay == true) document.documentElement.style.overflow = "hidden"
+  //       else document.documentElement.style.overflow = "auto"
+  //     },
+  //     immediate: false,
+  //   },
+  // },
   mounted() {
     this.scrolNumber = document?.documentElement?.scrollTop || document?.body?.scrollTop || window.pageYOffset || 0
     window.addEventListener("scroll", this.scrollToTop)
@@ -85,64 +116,59 @@ export default {
   width: 100%;
   height: 88PX;
   padding: 0 48PX;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 9;
 
-  &.header-scroll {
-    background-color: #202a3c;
-  }
   .header-logo {
-    width: 100PX;
-    height: 40PX;
+    width: 61PX;
+    min-height: 32PX;
+    display: block;
   }
   .header-more {
-    width: 44PX;
-    height: 44PX;
+    width: 36PX;
+    height: 36PX;
   }
 }
 /* prettier-ignore */
 .headerOverLay {
   position: fixed;
   width: 100%;
-  height: 150vh;
+  height: 100vh;
   overflow: hidden;
-  z-index: 10;
+  z-index: 100;
   top: 0;
   left: 0;
-  background: #202a3c;
-  .headerOverLay-top {
+  background: #131322;
+  padding: 0 24PX;
+  .headerNav {
     width: 100%;
     height: 88PX;
-    padding: 0 48PX;
-    padding-right: 0;
-  }
-  .headerOverLay-cancelLayout {
-    width: 130PX;
-    height: 88PX;
-  }
-  .headerOverLay-logo {
-    width: 100PX;
-    height: 40PX;
-  }
-  .headerOverLay-cancel {
-    width: 44PX;
-    height: 44PX;
+
+    .header-logo {
+      width: 61PX;
+      min-height: 32PX;
+      display: block;
+    }
+    .header-cancel {
+      width: 36PX;
+      height: 36PX;
+    }
   }
 
   .headerOverLay-list {
-    margin-top: 20PX;
-    &__item {
-      height: 110PX;
-      padding: 0 48PX;
+    width: 100%;
+    margin-top: 18PX;
+    .headerOverLay-list__item {
+      height: 100PX;
       font-size: 28PX;
       font-weight: 600;
-      color: #ffffff;
-      border-bottom: 1PX solid rgba(48, 58, 81, 1);
+      color: #EFEFFC;
+      border-bottom: 1PX solid rgba(120,120,150,0.5);
       img {
-        width: 44PX;
-        height: 44PX;
+        width: 36PX;
+        height: 36PX;
       }
     }
   }
