@@ -1,6 +1,82 @@
-# BG官网
+# BG 官网
 
-## Build Setup
+## 前置要求
+
+### Node
+
+`node` 需要 `^16` 版本 (`node > 16 会出现问题`)
+
+查看 node 版本
+
+```shell
+node -v
+```
+
+### 服务端静态渲染的服务器执行命令和流程（目前使用这种方法）
+
+拉取代码
+
+```shell
+git pull
+```
+
+安装包
+
+```shell
+npm i
+```
+
+执行静态文件打包命令
+
+```shell
+npm run generate
+```
+
+复制文件 dist 文件下到指定的目录
+
+### 服务端动态渲染的服务器执行命令和流程（目前暂时不使用）
+
+确保 node 全局安装了`pm2`，或者有更好的进程守护也行。以下是安装 pm2 的命令
+
+```shell
+npm i -g pm2
+```
+
+拉取代码
+
+```shell
+git pull
+```
+
+安装包
+
+```shell
+npm i
+```
+
+执行静态文件打包命令
+
+```shell
+npm run generate
+```
+
+执行服务端的打包命令
+
+```shell
+npm run build
+```
+
+以下四个文件要拷贝到执行的环境
+`.nuxt static nuxt.config.js package.json`
+拷贝到执行的环境之后执行以下命令
+
+```
+npm i
+pm2 delete "nuxt-BGOffice-ssr"
+pm2 start npm --name "nuxt-BGOffice-ssr" -- run start
+```
+
+## 本地运行命令一览
 
 ```bash
 # install dependencies
@@ -23,82 +99,3 @@ $ npm run generate
 npm shrinkwrap --dev
 锁定包文件
 ```
-
-## linux serve command
-```bash
-# linux serve static project(静态文件)
-npm run generate && cp -a ./dist/* ./distFile 
-
-# linux serve shell command(服务器渲染（有请求接口的情况）)
-# node版本v16.12.0
-git pull
-npm i
-npm run generate
-npm run build
-# 以下四个文件要拷贝到正式环境
-#.nuxt static nuxt.config.js package.json
-# npm i
-# npm run start
-```
-
-
-## git commit
-大小写（必须确保电脑是区分大小写的）：git config core.ignorecase false
-
-commit: 必须以feat|update|fix|docs|style|refactor|perf|test|chore|cicd开头，英文冒号加一个空格
-
-
-## Special Directories
-
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
-
-
-## `if use pm2`
-pm2 delete "nuxt-ssOffice-ssr"
-pm2 start npm --name "nuxt-ssOffice-ssr" -- run start
