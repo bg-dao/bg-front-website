@@ -100,7 +100,7 @@
           <div class="block5-video">
             <!-- <video ref="video" id="video" src=""></video> -->
             <!-- <video preload="none" poster="/video/ai-videoPoster.png" id="video2" playsinline controls loop controlslist="nodownload noremoteplayback" @click="playVideo" ref="video"><source src="/video/ai-video.mp4" type="video/mp4" /></video> -->
-            <video preload="none" id="video2" playsinline controls loop controlslist="nodownload noremoteplayback" @click="playVideo" ref="video"><source src="/video/ai-video.mp4" type="video/mp4" /></video>
+            <video preload="none" id="video" ref="video" poster="/video/ai-videoPoster.png" playsinline controls loop controlslist="nodownload noremoteplayback" @click="playVideo"><source src="/video/ai-video.mp4" type="video/mp4" /></video>
           </div>
         </div>
       </section>
@@ -166,19 +166,23 @@
           <div class="b4-gap flex flex-wrap flex-jus-between">
             <div class="b4-music">
               <img src="@/assets/img/ai/block4_music1.png" alt="music-img" class="music-img" />
-              <img src="@/assets/img/ai/block4_musicPlay.png" alt="musicPlay" class="music-icon" />
+              <img src="@/assets/img/ai/block4_musicPlay.png" alt="musicPlay" class="music-icon" v-show="!musicStatusList[0]" @click="playMusic('music1', 0)" />
+              <img src="@/assets/img/ai/block4_musicStop.png" alt="musicStop" class="music-icon" v-show="musicStatusList[0]" @click="stopMusic('music1', 0)" />
             </div>
             <div class="b4-music">
               <img src="@/assets/img/ai/block4_music2.png" alt="music-img" class="music-img" />
-              <img src="@/assets/img/ai/block4_musicPlay.png" alt="musicPlay" class="music-icon" />
+              <img src="@/assets/img/ai/block4_musicPlay.png" alt="musicPlay" class="music-icon" v-show="!musicStatusList[1]" @click="playMusic('music2', 1)" />
+              <img src="@/assets/img/ai/block4_musicStop.png" alt="musicStop" class="music-icon" v-show="musicStatusList[1]" @click="stopMusic('music2', 1)" />
             </div>
             <div class="b4-music">
               <img src="@/assets/img/ai/block4_music3.png" alt="music-img" class="music-img" />
-              <img src="@/assets/img/ai/block4_musicPlay.png" alt="musicPlay" class="music-icon" />
+              <img src="@/assets/img/ai/block4_musicPlay.png" alt="musicPlay" class="music-icon" v-show="!musicStatusList[2]" @click="playMusic('music3', 2)" />
+              <img src="@/assets/img/ai/block4_musicStop.png" alt="musicStop" class="music-icon" v-show="musicStatusList[2]" @click="stopMusic('music3', 2)" />
             </div>
             <div class="b4-music">
               <img src="@/assets/img/ai/block4_music4.png" alt="music-img" class="music-img" />
-              <img src="@/assets/img/ai/block4_musicPlay.png" alt="musicPlay" class="music-icon" />
+              <img src="@/assets/img/ai/block4_musicPlay.png" alt="musicPlay" class="music-icon" v-show="!musicStatusList[3]" @click="playMusic('music4', 3)" />
+              <img src="@/assets/img/ai/block4_musicStop.png" alt="musicStop" class="music-icon" v-show="musicStatusList[3]" @click="stopMusic('music4', 3)" />
             </div>
           </div>
         </div>
@@ -188,7 +192,7 @@
           <div class="b5-title">AI视频</div>
           <div class="b5-video">
             <!-- <video ref="video2" id="video2" src=""></video> -->
-            <video preload="none" playsinline ref="video2" id="video" controls loop controlslist="nodownload noremoteplayback"><source src="/video/ai-video.mp4" type="video/mp4" /></video>
+            <video preload="none" poster="/video/ai-videoPoster.png" playsinline ref="video2" id="video2" controls loop controlslist="nodownload noremoteplayback"><source src="/video/ai-video.mp4" type="video/mp4" /></video>
           </div>
         </div>
       </section>

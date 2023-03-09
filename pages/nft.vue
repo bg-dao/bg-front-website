@@ -37,7 +37,40 @@
       </section>
     </div>
 
-    <div class="nft" v-show="isMobile"></div>
+    <div class="nft" v-show="isMobile">
+      <section class="wow fadeInUp" data-wow-duration="1s"><img src="@/assets/img/nft/ntf_b1.png" alt="ntf_b1" class="ntf-b1" /></section>
+
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="ntf-b2">
+          <div class="b2-title">发行、铸造和确权</div>
+          <div class="b2-layout flext">
+            <img src="@/assets/img/nft/ntf_b2_box1.png" alt="ntfApp" class="b2-box b2-box1" />
+            <img src="@/assets/img/nft/ntf_b2_box2.png" alt="ntfApp" class="b2-box b2-box2" />
+            <img src="@/assets/img/nft/ntf_b2_box3.png" alt="ntfApp" class="b2-box b2-box3" />
+          </div>
+        </div>
+      </section>
+
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="ntf-b3">
+          <div class="b3-title">基础设施</div>
+          <img src="@/assets/img/nft/ntf_b3.png" alt="infrastructure" class="b3-img" />
+        </div>
+      </section>
+
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="ntf-b4">
+          <div class="b4-title">关于NFT</div>
+          <div class="b4-text1">万物皆可NFT化</div>
+          <div class="b4-text2">
+            每个NFT在链上都有唯一标识
+            <br />
+            不可篡改，也不可相互替代
+          </div>
+          <img src="@/assets/img/nft/ntf_b4.png" alt="NFT" class="b4-img" />
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -50,8 +83,7 @@ export default {
     isMobile: state => state.app.isMobile
   }),
   data() {
-    return {
-    }
+    return {}
   },
   mounted() {
     new window.WOW().init()
@@ -174,4 +206,88 @@ export default {
   }
 }
 /* prettier-ignore */
+.nft {
+  .nft-b1 {
+    width: 100%;
+    min-height: 448PX;
+    display: block;
+  }
+  .ntf-b2 {
+    margin-top: 80PX;
+    .b2-title {
+      font-size: 40PX;
+      font-weight: 600;
+      color: #EFEFFC;
+      text-align: center;
+      margin-bottom: 50PX;
+    }
+    .b2-layout {
+      width: 100%;
+      padding: 0 8PX;
+    }
+    .b2-box {
+      width: 245PX;
+      min-height: 477PX;
+      display: block;
+    }
+    .b2-box1 {
+      margin-top: 93PX;
+    }
+    .b2-box3 {
+      margin-top: 140PX;
+    }
+  }
+  .ntf-b3 {
+    margin-top: 100PX;
+    .b3-title {
+      font-size: 40PX;
+      font-weight: 600;
+      color: #EFEFFC;
+      text-align: center;
+      margin-bottom: 64PX;
+    }
+    .b3-img {
+      width: 702PX;
+      min-height: 446PX;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .ntf-b4 {
+    margin-top: 120PX;
+    position: relative;
+    z-index: 6;
+    margin-bottom: 120PX;
+    .b4-title {
+      font-size: 40PX;
+      font-weight: 600;
+      color: #EFEFFC;
+      text-align: center;
+      margin-bottom: 64PX;
+    }
+    .b4-text1 {
+      font-size: 26PX;
+      font-weight: 600;
+      color: #EFEFFC;
+      text-align: center;
+      margin-bottom: 16PX;
+    }
+    .b4-text2 {
+      margin: 0 auto;
+      width: 320PX;
+      height: 80PX;
+      font-size: 20PX;
+      font-weight: 600;
+      color: #787896;
+      margin-bottom: 22PX;
+    }
+    .b4-img {
+      width: 668PX;
+      min-height: 744PX;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+}
 </style>

@@ -17,7 +17,12 @@ const clock = new THREE.Clock()
 
 function init() {
   let container = document.getElementById("manScene")
-  if (document?.body?.clientWidth < 1200) container = document.getElementById("manScene2")
+  if (document?.body?.clientWidth < 1200) {
+    container = document.getElementById("manScene2")
+    width = document.body.clientWidth * 0.936
+    height = document.body.clientWidth * 0.936 * 702 / 500
+
+  }
   container.innerHTML = ""
   // document.getElementById("manScene").appendChild(container)
   // document.body.appendChild(container)
@@ -108,6 +113,10 @@ function loadMan(url) {
     gltf.scene.scale.set(0.02, 0.02, 0.02)
     gltf.scene.rotation.y = Math.PI
     gltf.scene.position.set(0, -0.6, 0)
+    if (document?.body?.clientWidth < 1200) {
+      gltf.scene.scale.set(0.01, 0.01, 0.01)
+      gltf.scene.position.set(0, 0, 0)
+    }
 
     // 随机一个动作播放
     const mixer = new THREE.AnimationMixer(gltf.scene)
