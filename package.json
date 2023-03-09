@@ -1,8 +1,7 @@
 {
-  "name": "ss-pc",
+  "name": "bg-office",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nuxt",
     "build": "cross-env NODE_ENV=pro nuxt build",

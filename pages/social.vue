@@ -128,16 +128,17 @@ export default {
     }
   },
   mounted() {
+    // import start from "@/three/man/man.js"
     new window.WOW().init()
     // console.log("This is current swiper instance object", this.mySwiper, "It will slideTo banners 3")
     // this.mySwiper.slideTo(3, 1000, false)
 
     // console.log("this.$axios", this.$axios)
     // this.fetchUrl()
-
     if (!this.clearObj) {
-      this.clearObj = start(this.manUrls[0])
+      this.clearObj = start(this.manUrls[0], this)
     }
+
   },
   methods: {
     nextMan(n) {
@@ -156,7 +157,7 @@ export default {
         if (requestID) window.cancelAnimationFrame(requestID)
       }
       this.manIndex = i
-      this.clearObj = start(this.manUrls[i])
+      this.clearObj = start(this.manUrls[i], this)
     }
   },
   head() {

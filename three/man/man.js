@@ -1,8 +1,8 @@
-import * as THREE from "three"
+// import * as THREE from "three"
 
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
-import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js"
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
+// import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js"
 
 let camera, scene, renderer
 let width = 1200
@@ -11,7 +11,19 @@ let mixers = null
 let oldMan = null
 let newMan = null
 let requestID = null
-const clock = new THREE.Clock()
+let THREE, OrbitControls, GLTFLoader, RGBELoader
+
+// if (window) {
+//   THREE = window?.THREE,
+//   OrbitControls = window?.OrbitControls,
+//   GLTFLoader = window?.GLTFLoader,
+//   RGBELoader = window?.RGBELoader
+// }
+
+
+// let clock = new THREE.Clock()
+let clock = null
+
 // width: 960px;
 // height: 440px;
 
@@ -106,7 +118,7 @@ function loadMan(url) {
   // loader.load("RobotExpressive.glb", function (gltf) {
   // loader.load("05.gltf", function (gltf) {
   // loader.load("01.gltf", function (gltf) {
-  loader.load(url, function (gltf) {
+  loader.load(url, function(gltf) {
     console.log("gltf is ", gltf)
     // console.log("gltf dispose is ", gltf?.dispose)
 
@@ -190,7 +202,19 @@ function clear() {
   if (requestID) window.cancelAnimationFrame(requestID)
 }
 
-function start(url) {
+function start(url, vThis) {
+
+  if (!url || !vThis) return null
+  // THREE = THREE1
+  // OrbitControls = OrbitControls1
+  // GLTFLoader = GLTFLoader1
+  // RGBELoader = RGBELoader1
+  if (!THREE) THREE = vThis?.$THREE
+  if (!OrbitControls) OrbitControls = vThis?.$OrbitControls
+  if (!GLTFLoader) GLTFLoader = vThis?.$GLTFLoader
+  if (!RGBELoader) RGBELoader = vThis?.$RGBELoader
+
+  clock = new THREE.Clock()
   init()
   loadMan(url)
   // render()

@@ -33,6 +33,7 @@ export default {
   plugins: [
     { src: "@/plugins/swiper", ssr: false },
     { src: "@/plugins/store", ssr: false },
+    { src: "@/plugins/three", ssr: false },
     // { src: "@/plugins/wow", ssr: false },
   ],
 
