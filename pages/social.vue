@@ -1,61 +1,75 @@
 <template>
   <div>
     <div class="socialPC" v-show="!isMobile">
-
-      <div class="socialPC-block1">
-        <img src="@/assets/img/social/block1_img1.png" alt="socialLine" class="block1-img1">
-        <img src="@/assets/img/social/block1_img2.png" alt="social" class="block1-img2">
-        <img src="@/assets/img/social/block1_img3.png" alt="socialLine" class="block1-img3">
-      </div>
-
-      <div class="socialPC-blcok2">
-        <div class="block2-title">
-          推荐、点赞、转发和评论
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="socialPC-block1">
+          <img src="@/assets/img/social/block1_img1.png" alt="socialLine" class="block1-img1" />
+          <img src="@/assets/img/social/block1_img2.png" alt="social" class="block1-img2" />
+          <img src="@/assets/img/social/block1_img3.png" alt="socialLine" class="block1-img3" />
         </div>
-        <div class="block2-boxLayout flext flex-jus-between">
-          <div class="block2-box block2-box1">
-            <img src="@/assets/img/social/block2_img1.png" alt="socialApp">
-          </div>
-          <div class="block2-box block2-box2">
-            <img src="@/assets/img/social/block2_img2.png" alt="socialApp">
-          </div>
-          <div class="block2-box block2-box3">
-            <img src="@/assets/img/social/block2_img3.png" alt="socialApp">
+      </section>
+
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="socialPC-blcok2">
+          <div class="block2-title">推荐、点赞、转发和评论</div>
+          <div class="block2-boxLayout flext flex-jus-between">
+            <div class="block2-box block2-box1"><img src="@/assets/img/social/block2_img1.png" alt="socialApp" /></div>
+            <div class="block2-box block2-box2"><img src="@/assets/img/social/block2_img2.png" alt="socialApp" /></div>
+            <div class="block2-box block2-box3"><img src="@/assets/img/social/block2_img3.png" alt="socialApp" /></div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="socialPC-blcok3">
-        <div class="block3-title">
-          AI化的3D数字人
-        </div>
-        <div class="block3-layout">
-          <div class="block3-people"></div>
-
-          <div class="block3-step">
-            <div class="step-stage"></div>
-            <div class="flext flex-jus-around">
-              <div class="step-people">
-
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="socialPC-blcok3">
+          <div class="block3-title">AI化的3D数字人</div>
+          <div class="block3-layout">
+            <div class="block3-people">
+              <div id="manScene" class="manScene"></div>
+              <div class="people-arrowLeft">
+                <img src="@/assets/img/social/arrowLeft.png" alt="arrowLeft" @click="nextMan(-1)">
               </div>
-              <div class="step-people">
-
+              <div class="people-arrowRight">
+                <img src="@/assets/img/social/arrowRight.png" alt="arrowRight" @click="nextMan(1)">
               </div>
-              <div class="step-people">
+            </div>
 
+            <div class="block3-step">
+              <div class="step-stage"></div>
+              <div class="flext flex-jus-around">
+                <div class="step-people"></div>
+                <div class="step-people step-peopleActive"></div>
+                <div class="step-people"></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    
-      <div class="socialPC-blcok4">
-        <div class="block4-title">3D场景</div>
-        <div class="block4-img"></div>
-        <div class="block4-text">3D画廊：承载海量AI-NFT的图片</div>
-        <div class="block4-img"></div>
-        <div class="block4-text">3D音乐会：承载海量AI-NFT的音乐</div>
-      </div>
+      </section>
+
+      <!-- <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="socialPC-blcok4">
+          <div class="block4-title">3D场景</div>
+          <div class="block4-img"></div>
+          <div class="block4-text">3D画廊：承载海量AI-NFT的图片</div>
+          <div class="block4-img"></div>
+          <div class="block4-text">3D音乐会：承载海量AI-NFT的音乐</div>
+        </div>
+      </section> -->
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="socialPC-blcok5">
+          <div class="block5-title">3D场景</div>
+          <div class="block5-layout flex flex-jus-between">
+            <div class="block5-box">
+              <div class="block5-text">3D画廊：承载海量AI-NFT的图片</div>
+              <div class="box-layout"><img src="@/assets/img/social/block5_box1.png" alt="3D画廊" class="box-img1" /></div>
+            </div>
+            <div class="block5-box">
+              <div class="block5-text">3D音乐会：承载海量AI-NFT的音乐</div>
+              <div class="box-layout"><img src="@/assets/img/social/block5_box2.png" alt="3D音乐会" class="box-img2" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <div class="social" v-show="isMobile"></div>
@@ -64,6 +78,7 @@
 
 <script>
 import { mapState } from "vuex"
+import start from "@/three/man/man.js"
 export default {
   layout: "default",
   name: "social",
@@ -72,54 +87,40 @@ export default {
   }),
   data() {
     return {
-      tab: 1,
-
+      manIndex: 0,
+      manUrls: ["01.gltf", "02.gltf", "03.gltf"],
+      clearObj: null
     }
   },
   mounted() {
-    this.tab = 1
-    // new window.WOW().init()
+    new window.WOW().init()
     // console.log("This is current swiper instance object", this.mySwiper, "It will slideTo banners 3")
     // this.mySwiper.slideTo(3, 1000, false)
 
     // console.log("this.$axios", this.$axios)
     // this.fetchUrl()
+
+    if (!this.clearObj) {
+      this.clearObj = start(this.manUrls[0])
+    }
   },
   methods: {
-    openAndroidUrl() {
-      window.open(this.androidUrl)
+    nextMan(n) {
+      this.changeMan((this.manIndex + n + this.manUrls.length) % this.manUrls.length)
     },
-    fetchUrl() {
-      let baseUrl = process.env.BASE_API ? process.env.BASE_API : "http://test-meta.web3ssc.com:32582"
-      if (location.href.includes("test")) baseUrl = "http://test-meta.web3ssc.com:32582"
-      else baseUrl = "https://meta.web3ssc.com"
-      console.log("baseUrl is ", baseUrl)
+    changeMan(i) {
+      console.log("i is ", i)
+      // state.clearWin()
+      if (this.clearObj) {
+        const { renderer, requestID } = this.clearObj
+        console.log("renderer is ", renderer, requestID)
 
-      this.$axios({
-        method: "get", //指定请求方式
-        url: baseUrl + "/api/common/normal/queryPcCommonInfo"
-      }).then(res => {
-        // console.log("res is ", res)
-        if (res.data?.code === 0) {
-          let appUpdateInfoList = res.data.data.appUpdateInfoList
-          appUpdateInfoList.forEach(item => {
-            if (item.osType == 2) this.androidUrl = item.updateUrl
-          })
-        }
-      })
-    },
-    gototab(tab) {
-      this.tab = tab
-    },
-    slideChangeTransitionEnd() {
-      // console.log("This is current swiper instance object", this.swiper, "It will slideTo banners 3")
-      this.swiper.on("slideChangeTransitionEnd", () => {
-        // console.log("---onSlideChangeEnd", this.swiper.realIndex)
-        this.mySwiperRealIndex = this.swiper.realIndex + 1
-      })
-    },
-    gotoSwiper(index) {
-      this.swiper.slideTo(index)
+        renderer?.dispose()
+        renderer?.forceContextLoss()
+        if (requestID) window.cancelAnimationFrame(requestID)
+      }
+      this.manIndex = i
+      start(this.manUrls[i])
     }
   },
   head() {
@@ -166,7 +167,7 @@ export default {
       text-align: center;
       font-size: 40px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
     }
     .block2-boxLayout {
       max-width: 1392px;
@@ -188,7 +189,6 @@ export default {
     .block2-box3 {
       margin-top: 307px;
     }
-
   }
 
   .socialPC-blcok3 {
@@ -198,7 +198,7 @@ export default {
       text-align: center;
       font-size: 40px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
       margin-bottom: 64px;
     }
     .block3-layout {
@@ -208,10 +208,49 @@ export default {
     .block3-people {
       width: 1200px;
       height: 620px;
-      background: #1A1A27;
+      background: #1a1a27;
       border-radius: 12px;
       position: relative;
       z-index: 10;
+      .manScene {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .people-arrowLeft {
+        position: absolute;
+        left: 24px;
+        top: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+        background: rgba(105,103,255,0.09);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+      .people-arrowRight {
+        position: absolute;
+        right: 24px;
+        top: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+        background: #6967FF;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
     }
     .block3-step {
       margin-top: 48px;
@@ -225,18 +264,21 @@ export default {
         left: 0;
         width: 1148px;
         height: 91px;
-        background-image: url('~@/assets/img/social/block3_stage.png');
+        background-image: url("~@/assets/img/social/block3_stage.png");
         background-size: 100% 100%;
-
       }
       .step-people {
         position: relative;
         z-index: 5;
         width: 188px;
         height: 300px;
-        background-image: url('~@/assets/img/social/block3_peopleBG.png');
+        // background-image: url("~@/assets/img/social/block3_peopleBG.png");
+        background-image: none;
         background-size: 188px 240px;
         background-position-y: 30px;
+      }
+      .step-peopleActive {
+        background-image: url("~@/assets/img/social/block3_peopleBG.png");
       }
     }
   }
@@ -248,7 +290,7 @@ export default {
       text-align: center;
       font-size: 40px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
       margin-bottom: 64px;
     }
     .block4-img {
@@ -262,8 +304,50 @@ export default {
       text-align: center;
       font-size: 18px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
       margin-bottom: 80px;
+    }
+  }
+
+  .socialPC-blcok5 {
+    margin-top: 200px;
+    .block5-title {
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+      font-weight: 600;
+      color: #efeffc;
+      margin-bottom: 64px;
+    }
+    .block5-layout {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    .block5-box {
+      width: 572px;
+      .box-layout {
+        width: 572px;
+        height: 454px;
+        background-image: url("~@/assets/img/social/block5_boxBG.png");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .box-img1 {
+          width: 293px;
+          min-height: 288px;
+        }
+        .box-img2 {
+          width: 280px;
+          min-height: 273px;
+        }
+      }
+    }
+    .block5-text {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      color: #efeffc;
+      margin-bottom: 23px;
     }
   }
 }

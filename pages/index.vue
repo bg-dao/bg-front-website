@@ -1,83 +1,83 @@
 <template>
   <div>
     <div class="indexPC " v-show="!isMobile">
+      <img src="@/assets/img/index/top.png" alt="top" class="indexPC-top" />
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="indexPC-layout"><img src="@/assets/img/index/block1.png" alt="block1" class="indexPC-blcok1" /></div>
+      </section>
 
-      <img src="@/assets/img/index/top.png" alt="top" class="indexPC-top">
-      <div class="indexPC-layout">
-        <img src="@/assets/img/index/block1.png" alt="block1" class="indexPC-blcok1" />
-      </div>
+      <section class="wow fadeInUp" data-wow-duration="1s"><img src="@/assets/img/index/block2.png" alt="blcok2" class="indexPC-blcok2" /></section>
 
-      <img src="@/assets/img/index/block2.png" alt="blcok2" class="indexPC-blcok2" />
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="indexPC-layout">
+          <div class="indexPC-blcok3">
+            <div class="blcok3-title">创新探索</div>
+            <div class="block3-chatRight flex flex-row-reverse">
+              <img src="@/assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
+              <div class="chatRight-chat">生成式AI如何全驱动一站式创作、NFT化和社交平台？</div>
+            </div>
 
-      <div class="indexPC-layout">
-        <div class="indexPC-blcok3">
-          <div class="blcok3-title">创新探索</div>
-          <div class="block3-chatRight flex flex-row-reverse">
-            <img src="@/assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
-            <div class="chatRight-chat">生成式AI如何全驱动一站式创作、NFT化和社交平台？</div>
+            <div class="block3-chatLeft flext">
+              <img src="@/assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
+              <div class="chatLeft-chat">一键创作AI作品，AI-NFT化，确权和赋予经济价值，IP品牌化；全新AI社交模式，承载海量AI-NFT的3D场景，AI化的3D数字人在线互动</div>
+            </div>
+
+            <div class="block3-chatRight flex flex-row-reverse">
+              <img src="@/assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
+              <div class="chatRight-chat chatRight-chat2">如何将Web2海量用户带入Web3世界？</div>
+            </div>
+
+            <div class="block3-chatLeft flext">
+              <img src="@/assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
+              <div class="chatLeft-chat chatLeft-chat2">Web2.5,渐进式发展，短中期偏中心化，以Web2的良好用户体验为主，后续平滑过度到Web3；Web3账户体系向账户抽象看齐，降低用户使用门槛，保证用户资金安全</div>
+            </div>
           </div>
-
-          <div class="block3-chatLeft flext">
-            <img src="@/assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
-            <div class="chatLeft-chat">一键创作AI作品，AI-NFT化，确权和赋予经济价值，IP品牌化；全新AI社交模式，承载海量AI-NFT的3D场景，AI化的3D数字人在线互动</div>
-          </div>
-
-          <div class="block3-chatRight flex flex-row-reverse">
-            <img src="@/assets/img/index/peopleAvatar.png" alt="peopleAvatar" class="chatRight-avatar" />
-            <div class="chatRight-chat chatRight-chat2">如何将Web2海量用户带入Web3世界？</div>
-          </div>
-
-          <div class="block3-chatLeft flext">
-            <img src="@/assets/img/index/AIAvatar.png" alt="AIAvatar" class="chatLeft-avatar" />
-            <div class="chatLeft-chat chatLeft-chat2" >Web2.5,渐进式发展，短中期偏中心化，以Web2的良好用户体验为主，后续平滑过度到Web3；Web3账户体系向账户抽象看齐，降低用户使用门槛，保证用户资金安全</div>
-          </div>
-
         </div>
-      </div>
+      </section>
     </div>
 
     <div class="index" v-show="isMobile">
-      <div class="index-b1">
-        <img src="@/assets/img/index/m_b1.png" alt="homeImg" class="b1-img">
-      </div>
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="index-b1"><img src="@/assets/img/index/m_b1.png" alt="homeImg" class="b1-img" /></div>
+      </section>
 
-      <div class="index-b2">
-        <div class="b2-title">AI-NFT贯穿整个产品线</div>
-        <img src="@/assets/img/index/b2_arrow.png" alt="arrow" class="b2-arrow" @click="mySwiper && mySwiper.slideNext()">
-        <div class="b2-swiper">
-          <div class="swiper" v-swiper:mySwiper="swiperOption">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide" :key="index" v-for="(banner, index) in banners" :style="{ backgroundImage: 'url(' + banner + ')' }"></div>
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="index-b2">
+          <div class="b2-title">AI-NFT贯穿整个产品线</div>
+          <img src="@/assets/img/index/b2_arrow.png" alt="arrow" class="b2-arrow" @click="mySwiper && mySwiper.slideNext()" />
+          <div class="b2-swiper">
+            <div class="swiper" v-swiper:mySwiper="swiperOption">
+              <div class="swiper-wrapper"><div class="swiper-slide" :key="index" v-for="(banner, index) in banners" :style="{ backgroundImage: 'url(' + banner + ')' }"></div></div>
             </div>
+          </div>
+          <img src="@/assets/img/index/b2_arrow.png" alt="arrow" class="b2-arrow" @click="mySwiper && mySwiper.slidePrev()" />
+        </div>
+      </section>
 
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="index-b3">
+          <div class="b3-title">「生成式AI全驱动」</div>
+          <div class="b3-title2">创新探索</div>
+          <div class="b3-layout">
+            <div class="b3-block flext flex-row-reverse">
+              <img src="@/assets/img/index/b3-leftIcon.png" alt="peopleAvatar" class="b3-leftIcon" />
+              <div class="b3-box b3-box1">生成式AI如何全驱动一站式创作、NFT化和社交平台？</div>
+            </div>
+            <div class="b3-block flext">
+              <img src="@/assets/img/index/b3-rightIcon.png" alt="peopleAvatar" class="b3-rightIcon" />
+              <div class="b3-box b3-box2">一键创作AI作品，AI-NFT化，确权和赋予经济价值，IP品牌化；全新AI社交模式，承载海量AI-NFT的3D场景，AI化的3D数字人在线互动</div>
+            </div>
+            <div class="b3-block flext flex-row-reverse">
+              <img src="@/assets/img/index/b3-leftIcon.png" alt="peopleAvatar" class="b3-leftIcon" />
+              <div class="b3-box b3-box3">如何将Web2海量用户带入Web3世界？</div>
+            </div>
+            <div class="b3-block flext">
+              <img src="@/assets/img/index/b3-rightIcon.png" alt="peopleAvatar" class="b3-rightIcon" />
+              <div class="b3-box b3-box2">Web2.5,渐进式发展，短中期偏中心化，以Web2的良好用户体验为主，后续平滑过度到Web3；Web3账户体系向账户抽象看齐，降低用户使用门槛，保证用户资金安全</div>
+            </div>
           </div>
         </div>
-        <img src="@/assets/img/index/b2_arrow.png" alt="arrow" class="b2-arrow" @click="mySwiper && mySwiper.slidePrev()">
-      </div>
-
-      <div class="index-b3">
-        <div class="b3-title">「生成式AI全驱动」</div>
-        <div class="b3-title2">创新探索</div>
-        <div class="b3-layout">
-          <div class="b3-block flext flex-row-reverse">
-            <img src="@/assets/img/index/b3-leftIcon.png" alt="peopleAvatar" class="b3-leftIcon" />
-            <div class="b3-box b3-box1">生成式AI如何全驱动一站式创作、NFT化和社交平台？</div>
-          </div>
-          <div class="b3-block flext">
-            <img src="@/assets/img/index/b3-rightIcon.png" alt="peopleAvatar" class="b3-rightIcon" />
-            <div class="b3-box b3-box2">一键创作AI作品，AI-NFT化，确权和赋予经济价值，IP品牌化；全新AI社交模式，承载海量AI-NFT的3D场景，AI化的3D数字人在线互动</div>
-          </div>
-          <div class="b3-block flext flex-row-reverse">
-            <img src="@/assets/img/index/b3-leftIcon.png" alt="peopleAvatar" class="b3-leftIcon" />
-            <div class="b3-box b3-box3">如何将Web2海量用户带入Web3世界？</div>
-          </div>
-          <div class="b3-block flext">
-            <img src="@/assets/img/index/b3-rightIcon.png" alt="peopleAvatar" class="b3-rightIcon" />
-            <div class="b3-box b3-box2">Web2.5,渐进式发展，短中期偏中心化，以Web2的良好用户体验为主，后续平滑过度到Web3；Web3账户体系向账户抽象看齐，降低用户使用门槛，保证用户资金安全</div>
-          </div>
-        </div>
-      </div>
-
+      </section>
     </div>
   </div>
 </template>
@@ -92,7 +92,6 @@ export default {
   }),
   data() {
     return {
-      tab: 1,
       banners: [require(`~/assets/img/index/b2_banner1.png`), require(`~/assets/img/index/b2_banner2.png`), require(`~/assets/img/index/b2_banner3.png`)],
 
       swiperOption: {
@@ -104,15 +103,14 @@ export default {
         // autoplay: true,
         autoplay: {
           delay: 3500 //3秒切换一次
-        },
+        }
       },
 
       androidUrl: "https://bytego123.com/download/ss/starsky1.0.2.apk"
     }
   },
   mounted() {
-    this.tab = 1
-    // new window.WOW().init()
+    new window.WOW().init()
     // console.log("This is current swiper instance object", this.mySwiper, "It will slideTo banners 3")
     // this.mySwiper.slideTo(3, 1000, false)
 
@@ -180,7 +178,7 @@ export default {
     .blcok3-title {
       font-size: 40px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
       text-align: center;
       margin-bottom: 63px;
     }
@@ -190,16 +188,16 @@ export default {
       .chatRight-chat {
         width: 546px;
         height: 84px;
-        background-image: url('~@/assets/img/index/chatRight.png');
+        background-image: url("~@/assets/img/index/chatRight.png");
         background-size: 100% 100%;
         font-size: 18px;
         font-weight: 600;
-        color: #EFEFFC;
+        color: #efeffc;
         padding: 29px 46px;
         text-align: center;
       }
       .chatRight-chat2 {
-        background-image: url('~@/assets/img/index/chatRight2.png');
+        background-image: url("~@/assets/img/index/chatRight2.png");
         width: 421px;
       }
       .chatRight-avatar {
@@ -215,16 +213,16 @@ export default {
         width: 703px;
         height: 137px;
         line-height: 40px;
-        background-image: url('~@/assets/img/index/chatLeft.png');
+        background-image: url("~@/assets/img/index/chatLeft.png");
         background-size: 100% 100%;
         font-size: 18px;
         font-weight: 600;
-        color: #EFEFFC;
+        color: #efeffc;
         padding: 28px 45px;
       }
 
       .chatLeft-chat2 {
-        background-image: url('~@/assets/img/index/chatLeft2.png');
+        background-image: url("~@/assets/img/index/chatLeft2.png");
         width: 703px;
         height: 175px;
       }
@@ -235,7 +233,6 @@ export default {
       }
     }
   }
-
 }
 /* prettier-ignore */
 .index {

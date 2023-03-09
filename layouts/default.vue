@@ -2,7 +2,7 @@
   <div>
     <div class="defaultLayoutPC" :class="{'defaultLayoutPCHome': $route.name == 'index'}">
       <!-- <div class="defaultLayoutPC" v-if="!isMobile"> -->
-      <Header></Header>
+      <vHeader></vHeader>
       <Nuxt />
       <vFooter></vFooter>
       <scrollBall></scrollBall>
@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import Header from "@/components/header.vue"
+import vHeader from "@/components/vHeader.vue"
 import vFooter from "@/components/vFooter.vue"
 import scrollBall from "@/components/scrollBall.vue"
 import { mapState } from "vuex"
 export default {
   name: "DefaultLayout",
   components: {
-    Header,
+    vHeader,
     vFooter,
     scrollBall,
   },

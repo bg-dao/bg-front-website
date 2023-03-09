@@ -1,49 +1,40 @@
 <template>
   <div>
     <div class="nftPC" v-show="!isMobile">
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="ntfPC-block1"><img src="@/assets/img/nft/block1Text.png" alt="block1Text" /></div>
+      </section>
 
-      <div class="ntfPC-block1">
-        <img src="@/assets/img/nft/block1Text.png" alt="block1Text">
-      </div>
-
-      <div class="nftPC-blcok2">
-        <div class="block2-title">
-          发行、铸造和确权
-        </div>
-        <div class="block2-boxLayout flext flex-jus-between">
-          <div class="block2-box block2-box1">
-            <img src="@/assets/img/nft/block2_img1.png" alt="nftApp">
-          </div>
-          <div class="block2-box block2-box2">
-            <img src="@/assets/img/nft/block2_img2.png" alt="nftApp">
-          </div>
-          <div class="block2-box block2-box3">
-            <img src="@/assets/img/nft/block2_img3.png" alt="nftApp">
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="nftPC-blcok2">
+          <div class="block2-title">发行、铸造和确权</div>
+          <div class="block2-boxLayout flext flex-jus-between">
+            <div class="block2-box block2-box1"><img src="@/assets/img/nft/block2_img1.png" alt="nftApp" /></div>
+            <div class="block2-box block2-box2"><img src="@/assets/img/nft/block2_img2.png" alt="nftApp" /></div>
+            <div class="block2-box block2-box3"><img src="@/assets/img/nft/block2_img3.png" alt="nftApp" /></div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="nftPC-blcok3">
-        <div class="block3-title">
-          基础设施
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="nftPC-blcok3">
+          <div class="block3-title">基础设施</div>
+          <div class="block3-img"><img src="@/assets/img/nft/block3_img.png" alt="基础设施" /></div>
         </div>
-        <div class="block3-img">
-          <img src="@/assets/img/nft/block3_img.png" alt="基础设施">
-        </div>
-      </div>
+      </section>
 
-      <div class="nftPC-blcok4">
-        <div class="block4-title">
-          关于NFT
-        </div>
-        <div class="block4-imgLayout flext">
-          <img src="@/assets/img/nft/block4_img.png" alt="aboutNft" class="blcok4-img">
-          <div style="margin-top: 168px;">
-            <div class="block4-text1">万物皆可NFT化</div>
-            <div class="block4-text2">每个NFT在链上都有唯一标识 不可篡改，</div>
+      <section class="wow fadeInUp" data-wow-duration="1s">
+        <div class="nftPC-blcok4">
+          <div class="block4-title">关于NFT</div>
+          <div class="block4-imgLayout flext">
+            <img src="@/assets/img/nft/block4_img.png" alt="aboutNft" class="blcok4-img" />
+            <div style="margin-top: 168px;">
+              <div class="block4-text1">万物皆可NFT化</div>
+              <div class="block4-text2">每个NFT在链上都有唯一标识 不可篡改，</div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
 
     <div class="nft" v-show="isMobile"></div>
@@ -60,22 +51,17 @@ export default {
   }),
   data() {
     return {
-      tab: 1,
-
     }
   },
   mounted() {
-    this.tab = 1
-    // new window.WOW().init()
+    new window.WOW().init()
     // console.log("This is current swiper instance object", this.mySwiper, "It will slideTo banners 3")
     // this.mySwiper.slideTo(3, 1000, false)
 
     // console.log("this.$axios", this.$axios)
     // this.fetchUrl()
   },
-  methods: {
-
-  },
+  methods: {},
   head() {
     return {
       title: "BG-NFT"
@@ -94,7 +80,7 @@ export default {
     width: 1094px;
     height: 339px;
     background-size: 100% 100%;
-    background-image: url('~@/assets/img/nft/block1BG.png');
+    background-image: url("~@/assets/img/nft/block1BG.png");
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,7 +97,7 @@ export default {
       text-align: center;
       font-size: 40px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
     }
     .block2-boxLayout {
       max-width: 1392px;
@@ -133,7 +119,6 @@ export default {
     .block2-box3 {
       margin-top: 307px;
     }
-
   }
 
   .nftPC-blcok3 {
@@ -143,7 +128,7 @@ export default {
       text-align: center;
       font-size: 40px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
       margin-bottom: 64px;
     }
     .block3-img {
@@ -160,7 +145,7 @@ export default {
       text-align: center;
       font-size: 40px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
       margin-bottom: 10px;
     }
     .block4-imgLayout {
@@ -175,7 +160,7 @@ export default {
     .block4-text1 {
       font-size: 28px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
     }
     .block4-text2 {
       margin-top: 24px;
@@ -183,7 +168,7 @@ export default {
       height: 76px;
       font-size: 20px;
       font-weight: 600;
-      color: #EFEFFC;
+      color: #efeffc;
       line-height: 38px;
     }
   }
