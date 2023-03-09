@@ -114,7 +114,8 @@ function init() {
 function loadMan(url) {
   // oldMan && scene.remove(oldMan.scene)
   // mixers = null
-  const loader = new GLTFLoader().setPath("three/man/")
+  // const loader = new GLTFLoader().setPath("./three/man/")
+  const loader = new GLTFLoader().setPath(window.location.origin + "/three/man/")
   // loader.load("RobotExpressive.glb", function (gltf) {
   // loader.load("05.gltf", function (gltf) {
   // loader.load("01.gltf", function (gltf) {
