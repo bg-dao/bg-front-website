@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="indexPC " v-show="!isMobile">
+    <div class="indexPC" v-show="!isMobile">
       <img src="@/assets/img/index/top.png" alt="top" class="indexPC-top" />
       <section class="wow fadeInUp" data-wow-duration="1s">
         <div class="indexPC-layout"><img src="@/assets/img/index/block1.png" alt="block1" class="indexPC-blcok1" /></div>
@@ -88,25 +88,25 @@ export default {
   layout: "default",
   name: "index",
   computed: mapState({
-    isMobile: state => state.app.isMobile
+    isMobile: (state) => state.app.isMobile,
   }),
   data() {
     return {
       banners: [require(`~/assets/img/index/b2_banner1.png`), require(`~/assets/img/index/b2_banner2.png`), require(`~/assets/img/index/b2_banner3.png`)],
 
       swiperOption: {
-        direction: "vertical",
+        // direction: "vertical",
         // watchSlidesProgress: true,
         // slidesPerView: "auto",
         // centeredSlides: true,
         loop: true,
         // autoplay: true,
         autoplay: {
-          delay: 3500 //3秒切换一次
-        }
+          delay: 3500, //3秒切换一次
+        },
       },
 
-      androidUrl: "https://bytego123.com/download/ss/starsky1.0.2.apk"
+      androidUrl: "https://bytego123.com/download/ss/starsky1.0.2.apk",
     }
   },
   mounted() {
@@ -134,13 +134,13 @@ export default {
     },
     gotoSwiper(index) {
       this.swiper.slideTo(index)
-    }
+    },
   },
   head() {
     return {
-      title: "BG官网-首页"
+      title: "BG官网-首页",
     }
-  }
+  },
 }
 </script>
 

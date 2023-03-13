@@ -403,10 +403,12 @@ export default {
       width: 620px;
       height: 620px;
       margin: 0 auto;
+      border-radius: 12px;
       // background-color: aqua;
       video {
         width: 620px;
         height: 620px;
+        border-radius: 12px;
       }
     }
   }
@@ -536,9 +538,11 @@ export default {
       width: 702PX;
       height: 702PX;
       margin: 0 auto;
+      border-radius: 12PX;
       video {
         width: 702PX;
         height: 702PX;
+        border-radius: 12PX;
       }
       // background-color: aqua;
     }

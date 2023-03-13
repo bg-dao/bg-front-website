@@ -26,16 +26,16 @@
           <div class="block3-layout">
             <div class="block3-people">
               <div id="manScene" class="manScene"></div>
-              <div class="people-arrowLeft" @click="nextMan(-1)"><img src="@/assets/img/social/arrowLeft.png" alt="arrowLeft" /></div>
-              <div class="people-arrowRight" @click="nextMan(1)"><img src="@/assets/img/social/arrowRight.png" alt="arrowRight" /></div>
+              <!-- <div class="people-arrowLeft" @click="nextMan(-1)"><img src="@/assets/img/social/arrowLeft.png" alt="arrowLeft" /></div>
+              <div class="people-arrowRight" @click="nextMan(1)"><img src="@/assets/img/social/arrowRight.png" alt="arrowRight" /></div> -->
             </div>
 
             <div class="block3-step">
               <div class="step-stage"></div>
               <div class="flext flex-jus-around">
-                <div class="step-people" :class="{ 'step-peopleActive': manIndex == 0 }"><img src="@/assets/img/social/social_b3_people1.png" alt="social_b3_people1" /></div>
-                <div class="step-people" :class="{ 'step-peopleActive': manIndex == 1 }"><img src="@/assets/img/social/social_b3_people2.png" alt="social_b3_people1" /></div>
-                <div class="step-people" :class="{ 'step-peopleActive': manIndex == 2 }"><img src="@/assets/img/social/social_b3_people3.png" alt="social_b3_people1" /></div>
+                <div class="step-people" @click="changeMan(0)" :class="{ 'step-peopleActive': manIndex == 0 }"><img src="@/assets/img/social/social_b3_people1.png" alt="social_b3_people1" /></div>
+                <div class="step-people" @click="changeMan(1)" :class="{ 'step-peopleActive': manIndex == 1 }"><img src="@/assets/img/social/social_b3_people2.png" alt="social_b3_people1" /></div>
+                <div class="step-people" @click="changeMan(2)" :class="{ 'step-peopleActive': manIndex == 2 }"><img src="@/assets/img/social/social_b3_people3.png" alt="social_b3_people1" /></div>
               </div>
             </div>
           </div>
@@ -84,16 +84,16 @@
         <div class="b3-title">AI化的3D数字人</div>
         <div class="b3-people">
           <div class="manScene2" id="manScene2"></div>
-          <div class="people-arrowLeft" @click="nextMan(-1)"><img src="@/assets/img/social/m_arrowLeft.png" alt="arrowLeft" /></div>
-          <div class="people-arrowRight" @click="nextMan(1)"><img src="@/assets/img/social/m_arrowRight.png" alt="arrowRight" /></div>
+          <!-- <div class="people-arrowLeft" @click="nextMan(-1)"><img src="@/assets/img/social/m_arrowLeft.png" alt="arrowLeft" /></div>
+          <div class="people-arrowRight" @click="nextMan(1)"><img src="@/assets/img/social/m_arrowRight.png" alt="arrowRight" /></div> -->
         </div>
 
         <div class="b3-step">
           <div class="step-stage"></div>
           <div class="flext flex-jus-around">
-            <div class="step-people" :class="{ 'step-peopleActive': manIndex == 0 }"><img src="@/assets/img/social/social_b3_people1.png" alt="social_b3_people1" /></div>
-            <div class="step-people" :class="{ 'step-peopleActive': manIndex == 1 }"><img src="@/assets/img/social/social_b3_people2.png" alt="social_b3_people1" /></div>
-            <div class="step-people" :class="{ 'step-peopleActive': manIndex == 2 }"><img src="@/assets/img/social/social_b3_people3.png" alt="social_b3_people1" /></div>
+            <div class="step-people" @click="changeMan(0)" :class="{ 'step-peopleActive': manIndex == 0 }"><img src="@/assets/img/social/social_b3_people1.png" alt="social_b3_people1" /></div>
+            <div class="step-people" @click="changeMan(1)" :class="{ 'step-peopleActive': manIndex == 1 }"><img src="@/assets/img/social/social_b3_people2.png" alt="social_b3_people1" /></div>
+            <div class="step-people" @click="changeMan(2)" :class="{ 'step-peopleActive': manIndex == 2 }"><img src="@/assets/img/social/social_b3_people3.png" alt="social_b3_people1" /></div>
           </div>
         </div>
       </div>
@@ -253,7 +253,12 @@ export default {
         width: 100%;
         height: 100%;
         position: relative;
+        border-radius: 12px;
+        ::v-deep canvas {
+          border-radius: 12px;
+        }
       }
+
       .people-arrowLeft {
         position: absolute;
         left: 24px;
@@ -316,6 +321,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
         img {
           width: 188px;
           // min-height: 200px;
@@ -449,6 +455,10 @@ export default {
         width: 100%;
         height: 100%;
         position: relative;
+        border-radius: 12PX;
+        ::v-deep canvas {
+          border-radius: 12PX;
+        }
       }
       .people-arrowLeft {
         position: absolute;

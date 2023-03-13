@@ -30,7 +30,7 @@
             <img src="@/assets/img/nft/block4_img.png" alt="aboutNft" class="blcok4-img" />
             <div style="margin-top: 168px;">
               <div class="block4-text1">万物皆可NFT化</div>
-              <div class="block4-text2">每个NFT在链上都有唯一标识 不可篡改，</div>
+              <div class="block4-text2">每个NFT在链上都有唯一标识 不可篡改，也不可相互替代</div>
             </div>
           </div>
         </div>
@@ -280,6 +280,7 @@ export default {
       font-weight: 600;
       color: #787896;
       margin-bottom: 22PX;
+      text-align: center;
     }
     .b4-img {
       width: 668PX;

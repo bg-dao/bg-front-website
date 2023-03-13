@@ -103,6 +103,9 @@ function init() {
 
   const controls = new OrbitControls(camera, renderer.domElement)
   controls.addEventListener("change", render) // use if there is no animation loop
+  controls.enableRotate = false //禁止旋转
+  controls.enablePan = false //禁止平移
+  controls.enableZoom = false //禁止缩放
   controls.minDistance = 2
   controls.maxDistance = 10
   controls.target.set(0, 0, -0.2)
