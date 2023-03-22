@@ -72,7 +72,8 @@
       <section class="wow fadeInUp" data-wow-duration="1s"><img src="@/assets/img/social/social_b1.png" alt="social-b1" class="social-b1" /></section>
 
       <div class="social-b2">
-        <div class="b2-title">发行、铸造和确权</div>
+        <!-- <div class="b2-title">发行、铸造和确权</div> -->
+        <div class="b2-title">推荐、点赞、转发和评论</div>
         <div class="b2-layout flext">
           <img src="@/assets/img/social/social_b2_box1.png" alt="social_b2_box1" class="b2-box b2-box1" />
           <img src="@/assets/img/social/social_b2_box2.png" alt="social_b2_box2" class="b2-box b2-box2" />
