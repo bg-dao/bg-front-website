@@ -11,7 +11,7 @@
             <div class="block2-box flex">
               <img src="@/assets/img/ai/block2_img1.png" alt="gpt" />
               <div>
-                <div class="box-text1">基于GPT多样化的微调模型</div>
+                <div class="box-text1">基于GPT系列多样化的微调模型</div>
                 <div class="box-text2" style="line-height: 36px;margin-top: 10px;">
                   1.生成提示，辅助创作AI图片
                   <br />
@@ -114,7 +114,7 @@
           <div class="b2-box flex">
             <img src="@/assets/img/ai/b2_img1.png" alt="b2_img1" />
             <div>
-              <div class="box-tex1">基于GPT多样化的微调模型</div>
+              <div class="box-tex1">基于GPT系列多样化的微调模型</div>
               <div class="box-tex2">
                 1.生成提示，辅助创作AI图片
                 <br />
