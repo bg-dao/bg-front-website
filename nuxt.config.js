@@ -9,7 +9,7 @@ export default {
     htmlAttrs: {
       lang: "en",
     },
-    meta: [{ charset: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" }, { hid: "description", name: "description", content: "一站式AI创作、数字资产化和展示平台，创新结合前沿技术，探索创作者经济新模式，让每个人真正拥有自己的价值，致力成为一流的创新价值服务平台" }, { name: "format-detection", content: "telephone=no" }, { name: "keywords", content: "BG,bg,官网,BG官网,区块链,区块链技术,数字藏品,元宇宙,数藏平台,一站式AI创作,AI创作,AI,数字资产化" }],
+    meta: [{ charset: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" }, { hid: "description", name: "description", content: "AI+Web3，一站式创作、NFT化和社交平台" }, { name: "format-detection", content: "telephone=no" }, { name: "keywords", content: "BG,bg,官网,BG官网,区块链,区块链技术,数字藏品,元宇宙,数藏平台,一站式AI创作,AI创作,AI,数字资产化" }],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   env: {
