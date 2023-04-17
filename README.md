@@ -29,6 +29,9 @@ npm i
 执行静态文件打包命令
 
 ```shell
+// 测试环境
+npm run generate:test
+// 正式环境
 npm run generate
 ```
 
